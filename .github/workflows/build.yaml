@@ -1,4 +1,3 @@
-
 name: .NET Build Pipeline
 
 on:
@@ -6,22 +5,11 @@ on:
 
 jobs:
   build:
-    name: Build and Test .NET Application
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      - name: Use .NET Build and Test Action
+        uses: yashmahi88/build-01@v1
         with:
           dotnet-version: '8.0.x'
-
-      - name: Restore Dependencies
-        run: dotnet restore
-
-      - name: Build Solution
-        run: dotnet build --configuration Release
-
 
